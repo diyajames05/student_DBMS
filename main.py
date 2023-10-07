@@ -4,6 +4,7 @@ import signup
 import login
 import register
 import update
+import search 
 
 
 
@@ -14,6 +15,7 @@ def loggedin(db):
         print('what would you like to do? ')
         print('1-Register a Student')
         print('2-Update student data')
+        print('3-Search student data')
         print('X- Exit')
         choice=input('Enter your choice: ')
         if choice=='1':
@@ -21,6 +23,10 @@ def loggedin(db):
 
         elif choice=='2':
             update.update(db)
+        
+        elif choice=='3':
+            search.search(db)
+            
         
         elif choice.upper()=='X':
             print('Thank you, exiting')
