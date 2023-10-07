@@ -3,7 +3,7 @@ import dbcreate
 import signup
 import login
 import register
-
+import update
 
 
 
@@ -20,7 +20,7 @@ def loggedin(db):
             register.register(db)
 
         elif choice=='2':
-            print('update')
+            update.update(db)
         
         elif choice.upper()=='X':
             print('Thank you, exiting')
