@@ -1,6 +1,33 @@
 import mysql.connector
 import dbcreate
 import signup
+import login
+import register
+
+
+
+
+
+
+def loggedin(db):
+    while True:
+        print('what would you like to do? ')
+        print('1-Register a Student')
+        print('2-Update student data')
+        print('X- Exit')
+        choice=input('Enter your choice: ')
+        if choice=='1':
+            register.register(db)
+
+        elif choice=='2':
+            print('update')
+        
+        elif choice.upper()=='X':
+            print('Thank you, exiting')
+            break
+
+    
+
 
 
 #program
@@ -13,11 +40,16 @@ if __name__ == "__main__":
         print('1-Signup')
         print('2-Login')
         print('X-Exit')
-        choice=input('Enter your choice')
+        choice=input('Enter your choice: ')
         if choice=='1':
             signup.signup(db)
         elif choice=='2':
-            print("login")
+            if login.login(db) is True:
+                loggedin(db)
+                
+            else:
+                continue
+
         elif choice.upper()=='X':
             print('Thank you, exiting')
             break

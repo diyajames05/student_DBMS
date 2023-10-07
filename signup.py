@@ -5,7 +5,6 @@ def signup(db):
     print('Please enter the following details')
     user_name=input('enter username: ')
     password=getpass.getpass('enter password: ')
-    print(user_name)
     #check if username is not empty
     if user_name!='':
         # check if this username exists
