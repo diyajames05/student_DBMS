@@ -1,3 +1,6 @@
+## STUDENT DBMS
+## Author Diya Sojan 12-A
+## 08/10/23
 def create_table(db):
     cursor=db.cursor()
     #LOGIN TABLE

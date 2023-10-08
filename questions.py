@@ -1,3 +1,6 @@
+## STUDENT DBMS
+## Author Diya Sojan 12-A
+## 08/10/23
 import mysql.connector
 
 def questionanswer(db):
