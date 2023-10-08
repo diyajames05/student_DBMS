@@ -23,7 +23,6 @@ def insert_scholarship_students(db):
     try:
         for i in range(1,13):
             insert_scholarship_students_for_class(db,i)
-            view_scholarship_students(db)
 
     except Exception:
         print('Error, unable to select scholarship students! (ALREADY DONE )')

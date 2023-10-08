@@ -7,7 +7,32 @@ import update
 import search 
 import questions
 import random_stu
+from prettytable import from_db_cursor
+import test 
+import display_results
 
+def conduct_test(db):
+    cursor=db.cursor()
+    print('Welcome, please enter the grade of the student who wants to take the test')
+    clas=int(input('enter the class the student is in'))
+    q1='''SELECT scholarship_id, student_id, 
+        student.name 
+        FROM scholarship 
+        INNER JOIN student 
+        ON scholarship.student_id=student.stu_id 
+        WHERE student.class=%s;''' % (clas)
+    cursor.execute(q1)
+    print('The following students are eligible for scholarship from class',clas)
+    table=from_db_cursor(cursor)
+    print(table)
+    student=input('enter the scholarship id of the student who needs to take the test')
+    q2='SELECT scholarship_id FROM scholarship WHERE scholarship_id=%s' % (student)
+    cursor.execute(q2)
+    x=cursor.fetchone()
+    if x==None:
+        print('Invalid id')
+    else:
+        test.test_for_scholarshipid(db,student)
 
 
 
@@ -22,6 +47,8 @@ def loggedin(db):
         print('4- Add Question to the scholarship test')
         print('5- Randomly generate scholarship list')
         print('6- View the students selected for scholarship')
+        print('7- Take scholarship Test')
+        print('8- View scholarship results')
         print('X- Exit')
         choice=input('Enter your choice: ')
         if choice=='1':
@@ -41,7 +68,13 @@ def loggedin(db):
         
         elif choice=='6':
             random_stu.view_scholarship_students(db)
-            
+        
+        elif choice=='7':
+            conduct_test(db)
+        
+        elif choice=='8':
+            display_results.display(db)
+
         
         elif choice.upper()=='X':
             print('Thank you, exiting')
