@@ -5,7 +5,7 @@ def register(db):
     cursor=db.cursor()
     print('Please enter the following details')
     name=input('Enter Student Name: ')
-    clas=input('Enter class: ')
+    clas=input('Enter class (1 to 12): ')
     section=input('Enter section: ')
     mname=input("Enter Mother's Name: ")
     fname=input("Enter Father's Name: ")

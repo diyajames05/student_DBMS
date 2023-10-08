@@ -6,6 +6,7 @@ import register
 import update
 import search 
 import questions
+import random_stu
 
 
 
@@ -13,11 +14,14 @@ import questions
 
 def loggedin(db):
     while True:
+        print('-------------------------')
         print('what would you like to do? ')
         print('1-Register a Student')
         print('2-Update student data')
         print('3-Search student data')
-        print('4- Add Question to the scholarsip test')
+        print('4- Add Question to the scholarship test')
+        print('5- Randomly generate scholarship list')
+        print('6- View the students selected for scholarship')
         print('X- Exit')
         choice=input('Enter your choice: ')
         if choice=='1':
@@ -28,8 +32,15 @@ def loggedin(db):
         
         elif choice=='3':
             search.search(db)
+
         elif choice=='4':
             questions.questionanswer(db)
+        
+        elif choice=='5':
+            random_stu.insert_scholarship_students(db)
+        
+        elif choice=='6':
+            random_stu.view_scholarship_students(db)
             
         
         elif choice.upper()=='X':
@@ -50,6 +61,7 @@ if __name__ == "__main__":
         print('1-Signup')
         print('2-Login')
         print('X-Exit')
+        print('-------------------------')
         choice=input('Enter your choice: ')
         if choice=='1':
             signup.signup(db)

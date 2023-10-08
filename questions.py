@@ -14,13 +14,13 @@ def questionanswer(db):
             while answer == 'X':
                 op = input("Which option is correct answer? (A,B,C OR D) ")
                 if op.upper() == 'A':
-                    answer = A
+                    answer = 'A'
                 elif op.upper() == 'B':
-                    answer = B
+                    answer = 'B'
                 elif op.upper() == 'C':
-                    answer = C
+                    answer = 'C'
                 elif op.upper() == 'D':
-                    answer = D
+                    answer = 'D'
               
                 else:
                     print("Please choose a valid option as your answer")

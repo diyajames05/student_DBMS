@@ -31,7 +31,7 @@ def create_table(db):
     ##FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
     q4='''CREATE TABLE IF NOT EXISTS scholarship(
         scholarship_id INT PRIMARY KEY AUTO_INCREMENT,
-        student_id INT NOT NULL,
+        student_id INT NOT NULL UNIQUE,
         FOREIGN KEY (student_id) REFERENCES student(stu_id), 
         score INT DEFAULT NULL, 
         reduced_fee INT DEFAULT NULL
