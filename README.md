@@ -1,1 +1,1 @@
-# student_DBMS
+#  select scholarship.scholarship_id, student.name, student.fees, student.mname FROM scholarship INNER JOIN student ON scholarship.student_id=student.stu_id;

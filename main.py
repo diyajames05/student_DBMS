@@ -5,6 +5,7 @@ import login
 import register
 import update
 import search 
+import questions
 
 
 
@@ -16,6 +17,7 @@ def loggedin(db):
         print('1-Register a Student')
         print('2-Update student data')
         print('3-Search student data')
+        print('4- Add Question to the scholarsip test')
         print('X- Exit')
         choice=input('Enter your choice: ')
         if choice=='1':
@@ -26,6 +28,8 @@ def loggedin(db):
         
         elif choice=='3':
             search.search(db)
+        elif choice=='4':
+            questions.questionanswer(db)
             
         
         elif choice.upper()=='X':
