@@ -52,7 +52,7 @@ def test_for_scholarshipid(db,scholarship_id):
         new_fee=og_fee-(10/100*og_fee)
     elif score==0:
         new_fee=og_fee-(1/100*og_fee)
-    q7='UPDATE scholarship SET reduced_fee=%s'%(new_fee)
+    q7='UPDATE scholarship SET reduced_fee=%s WHERE scholarship_id=%s '%(new_fee, scholarship_id)
     cursor.execute(q7)
     db.commit()
 

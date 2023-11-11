@@ -16,7 +16,10 @@ def create_table(db):
         section VARCHAR(10) NOT NULL,
         mname VARCHAR(20) NOT NULL, 
         fname VARCHAR(20) NOT NULL, 
-        fees INT NOT NULL);'''
+        fees INT NOT NULL,
+        is_parent_a_teacher VARCHAR(20),
+        parent_experience INT
+        );'''
     cursor.execute(q2)
     #SCHOLARSHIP QUESTION TABLE
     q3='''CREATE TABLE IF NOT EXISTS question (
